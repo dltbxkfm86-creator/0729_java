@@ -16,10 +16,7 @@ public class TestClass {
 	public void hi() {
 		System.out.println("가보자고!");
 	}
-	
-	public void hi() {
-		
-	}
+
 	
 	public void printStatement() {
 		System.out.println("1.");
