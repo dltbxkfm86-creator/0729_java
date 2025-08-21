@@ -8,4 +8,20 @@ public class TestClass {
 		// home sweet home
 		
 	}
+	
+	public void hi() {
+		
+	}
+	
+	public void printStatement() {
+		System.out.println("1.");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+	}
+	
+	public void bye() {
+		
+	}
 }
