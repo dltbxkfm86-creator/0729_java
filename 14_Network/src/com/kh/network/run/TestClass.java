@@ -6,7 +6,15 @@ public class TestClass {
 		
 		//
 		// home sweet home
-		
+		// git add .
+		// git status
+		// git commit -m " "
+		// git push origin master
+		// git pull origin master
+	}
+	
+	public void hi() {
+		System.out.println("가보자고!");
 	}
 	
 	public void hi() {
