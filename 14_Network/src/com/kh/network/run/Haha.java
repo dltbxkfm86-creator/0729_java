@@ -1,11 +1,7 @@
 package com.kh.network.run;
 
-public class TestClass {
+public class Haha {
 	public static void main(String[] args) {
-		// ±Ù¿Â¿Ã
-		
-		//
-		// home sweet home
 		
 	}
 }
