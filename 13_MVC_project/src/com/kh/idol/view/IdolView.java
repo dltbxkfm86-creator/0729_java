@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.kh.idol.controller.IdolController;
 import com.kh.idol.model.Idol;
+import com.kh.idol.model.vo.Board;
 import com.kh.idol.model.vo.Fan;
 
 public class IdolView {
@@ -201,11 +202,12 @@ public class IdolView {
 			System.out.println("4. 메인메뉴로 돌아가기");
 			System.out.println("당신의 선택은? ");
 			int menuNo = sc.nextInt();
+			sc.nextLine();
 			
 			switch(menuNo) {
 			case 1 : post();break;
-			case 2 : break;
-			case 3 : break;
+			case 2 : selectBoardList(); break;
+			case 3 : findByBoardNo(); break;
 			case 4 : return;
 			}
 		}
@@ -240,5 +242,57 @@ public class IdolView {
 		
 	}
 	
+	private void selectBoardList() {
+		// TODO Auto-generated method stub
+		
+		System.out.println();
+		System.out.println("\n 전체 게시글 목록입니다");
+		System.out.println();
+		
+		List<Board> boardList =  ic.selectBoardList();
+		
+		if(boardList.isEmpty()) {
+			System.out.println("게시글이 아직 존재하지 않습니다");
+			System.out.println();
+			System.out.println("첫 게시글의 주인공이 되어보세요");
+		} else {
+			for(Board board : boardList) {
+				System.out.println("글 번호 : " + board.getBoardNo() + "\t");
+				System.out.println("글 제목 : " + board.getBoradTitle() + "\t");
+				System.out.println("작성자 : " + board.getUserId() + "\t");
+				System.out.println("작성일 : " + board.getCreateDate());
+				System.out.println();
+			}
+			
+		}
+		
+	}
+
+	private void findByBoardNo() {
+		// TODO Auto-generated method stub
+		System.out.println("\n 게시글 상세 보기 서비스입니다");
+		
+		selectBoardList();
+		
+		System.out.println("상세 보기를 할 번호를 입력해주세요");
+		int boardNo = sc.nextInt();
+		sc.nextLine();
+		
+		Board board = ic.findByBoardNo(boardNo);
+		
+		if(board != null) {
+			System.out.println("=======================================");
+			System.out.println(boardNo + "번 게시글 상세보기");
+			System.out.println("\n제목" + board.getBoradTitle());
+			System.out.println("\n내용" + board.getBoardContent());
+			System.out.println("\n작성자 :" + board.getUserId() +
+								"\t 작성일 : " + board.getCreateDate());
+			
+		} else {
+			System.out.println(boardNo + "번 게시글은 존재하지 않습니다");
+			
+		}
+		
+	}
 }
 

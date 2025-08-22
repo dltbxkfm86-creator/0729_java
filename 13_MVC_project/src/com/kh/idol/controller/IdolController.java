@@ -147,5 +147,25 @@ public class IdolController {
 		
 	}
 
+	public List<Board> selectBoardList() {
+		// TODO Auto-generated method stub
+		// View에 요청에 의해 호출되며,
+		// 게시글 목록에 담겨있는 것을 되돌려주어야함
+		
+		return boards;
+		
+	}
+
+	public Board findByBoardNo(int boardNo) {
+		// TODO Auto-generated method stub
+		
+		if(boardNo > this.boardNo) {
+			return null;
+		}
+	
+		return boards.get(boardNo - 1);
+	
+	}
+
 
 }
